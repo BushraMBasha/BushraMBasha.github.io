@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ModernLudo</title>
+    <link rel="stylesheet" type="text/css" href="gameStyle.css" />
+</head>
+<body>
+    <div id="playGround" style="display:none;">
+        <div id="main">
+            <canvas id="gameboard"></canvas>
+            <canvas id="playboard"></canvas>
+            <canvas id="dice"></canvas>
+        </div>
+
+        <div id="buttondiv" style="visibility:hidden; margin-top:0; padding-top:0;">
+            <input type="button" id="rollDice" value="Roll the Dice" style="height:40px; cursor:pointer;" onclick="rolltheDice(this)" />
+        </div>
+        <div id="playerStatus">
+            <div id="players" style="background-color:lightgray; padding:5px;"></div>
+            <div id="info" style="width:100px; color:red;"></div>
+        </div>
+        <div style="display:none;">
+            <img id="redplane" src="Images/redcoin.png" alt="coin" />
+            <img id="blueplane" src="Images/bluecoin.png" alt="coin" />
+            <img id="greenplane" src="Images/greencoin.png" alt="coin" />
+            <img id="yellowplane" src="Images/yellowcoin.png" alt="coin" />
+            <img id="diceone" src="Images/diceone.png" alt="dice" />
+            <img id="dicetwo" src="Images/dicetwo.png" alt="dice" />
+            <img id="dicethree" src="Images/dicethree.png" alt="dice" />
+            <img id="dicefour" src="Images/dicefour.png" alt="dice" />
+            <img id="dicefive" src="Images/dicefive.png" alt="dice" />
+            <img id="dicesix" src="Images/dicesix.png" alt="dice" />
+        </div>
+    </div>
+    <div id="cover" class="cover" style="display:none;">
+        <div style="width:100%; margin:0;padding:0; height:40px; text-align:center;color:Highlight"><h1>Modern Ludo</h1></div>
+        <div style="background-color:coral;" class="scale">
+            <div title="Player 1" style="background: url(Images/redcoin.png) no-repeat center; background-size: 250px 250px; ">
+                <input type="text" class="playername" id="playeronename" style="color: grey" value="" disabled="disabled" />
+            </div>
+        </div>
+        <div style="background-color:lightblue;" class="scale">
+            <div title="Player 2" style="background: url(Images/yellowcoin.png) no-repeat center; background-size: 250px 250px; ">
+                <input type="text" class="playername" id="playertwoname" style="color: coral" value="" disabled="disabled" />
+            </div>
+        </div>
+        <div style="background-color:pink;" class="scale">
+            <div title="Player 3" style="background: url(Images/bluecoin.png) no-repeat center; background-size: 250px 250px; ">
+                <input type="text" class="playername" id="playerthreename" style="color: coral" value="" disabled="disabled" />
+            </div>
+        </div>
+        <div style="background-color:khaki;" class="scale">
+            <div title="Player 4" style="background: url(Images/greencoin.png) no-repeat center; background-size: 250px 250px; ">
+                <input type="text" class="playername" id="playerfourname" style="color: grey" value="" disabled="disabled" />
+            </div>
+        </div>
+        <div style="height:20px;width:100%; padding:0;margin:0" id="buttons">
+            <input type="button" id="gameon" value="Waiting~~~" style="height: 20px; width: 40%; margin: 0; padding: 0;margin-right: 3%; display:none;" disabled="disabled" onclick="startTheGame(this);" />
+            <input type="button" id="savegame" value="Save Game" style="height: 20px; width: 25%; margin: 0; padding: 0; margin-right: 3%; display: none;" onclick="saveGame(this);" />
+            <input type="button" id="loadgame" value="Load Game" style="height: 20px; width: 25%; margin: 0; padding: 0; display: none;" onclick="loadGame(this);" />
+        </div>
+        <canvas id="loading" style="height:20px; width: 680px; display:none; margin:0; padding:0"></canvas>
+        <div id="copyright" class="scale">Copyright &copy; 2014 - 2015 Tom Kent's Shop</div>
+    </div>
+
+    <div id="startScreen" class="cover" style="display:none;">
+        <div style="background-color: lightblue; width:100%;">
+            <div title="Player Join" style="width:100%;"><br />
+                <span id="roomfull" style="display: none; font-weight: 900; font-size: 25px;">Sorry, the room is Full.</span>
+                <input type="text" id="joinGame" style="color: grey; position: relative; top:60px;left:25px; width:90%;" value="" disabled="disabled" />
+                <img id="joinbtnimg" style="position: relative; top: 130px; left:-560px; width: 50px; height: 50px;" src="Images/redcoin.png" alt="coin" onclick="joinGameNow(this);" />
+            </div>
+        </div>
+    </div>
+    <div id="backtomenu" style="display:none;"><a onclick="showMenu();">Menu<<<</a></div>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="network.js"></script>
+</body>
+</html>
